@@ -1,13 +1,91 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{ 
+    display:flex; 
+    flex-direction:column; 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+header{
+    min-height:50px;
+}
+
+footer {
+    margin-top:auto;
+    min-height:50px; 
+}
+
+.trigger {
+    position: absolute;
+    opacity: 1;
+    transition: 0.1s;
+    
+}
+
+.trigger-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  cursor: pointer;
+}
+
+.modal-box {
+  position: relative;
+  height: auto;
+  width: 80%;
+  margin: 0 10%;
+  padding: 50px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: white;
+  cursor: auto;
+}
+
+.modal-title {
+  color: #41b5cf;
+  font-size: 30px;
+}
+
+.modal-content {
+  margin-top: 30px;
+  color: #6B6B6B;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: transform 250ms ease-in-out;
+  transform-origin: 50% 50%;
+}
+
+.modal-close:hover {
+  transform: rotate(180deg);
+}
+
+@media screen and (min-width: 800px) {
+  .modal-box {
+    max-width: 600px;
+    margin: 0 30px;
+  }
 }
