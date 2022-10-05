@@ -58,7 +58,7 @@ const Table: React.FC = () => {
 
         const data = await res.data;
         
-        await setSort(data);
+        await setHobbies(data);
 
         await setSortID(false);
 
@@ -97,8 +97,7 @@ const Table: React.FC = () => {
             name: '',
             description: '',
             img: ''
-        })
-        console.log(id)
+        });
     }
 
     const openAddModal = () => {
@@ -108,7 +107,7 @@ const Table: React.FC = () => {
 
     useEffect(() => {
      getUserHobbies();
-    }, [getUserHobbies])
+    }, [])
     
     function classNames(...classes:any) {
         return classes.filter(Boolean).join(' ');
