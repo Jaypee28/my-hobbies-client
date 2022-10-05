@@ -85,7 +85,9 @@ const Modal: React.FC<ModalProps> = ({ id, name, description, image, title, isOp
           formName: '',
           formDescription: '',
           formImage: ''
-        })
+        });
+
+        
       }
 
       if(modalType === "DEL"){
@@ -95,9 +97,9 @@ const Modal: React.FC<ModalProps> = ({ id, name, description, image, title, isOp
       if(modalType === "PROFILE"){
         await dispatch(updateProfile(first_name, last_name, introduction));
       }
-
-      onClose();
       
+      onClose();
+      window.location.reload();
     };
 
     return isOpen ? (
